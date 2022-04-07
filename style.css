@@ -1,0 +1,110 @@
+body {
+  background: #161616 !important;
+  color: #fff !important;
+  font-family: "Roboto", sans-serif;
+}
+
+.logo {
+  font-family: "Dancing Script", cursive !important;
+  font-size: 32px !important;
+}
+
+a,
+.btn,
+p,
+span {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+.btn {
+  border: none !important;
+  color: #fff !important;
+}
+
+.btn:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.btn-primary {
+  background: #e63e6d !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover {
+  background: #e3275c !important;
+}
+
+.btn-primary:active {
+  background: #d51c50 !important;
+}
+
+.bg-dark {
+  background: #161616 !important;
+}
+
+.bg-darker {
+  background: #0f0e0e !important;
+}
+
+.dropdown-menu-dark {
+  background: #161616 !important;
+}
+
+.dropdown-menu-dark .dropdown-item:active {
+  background: #e63e6d !important;
+}
+
+.list-group-item:hover {
+  background: #0f0e0e !important;
+}
+
+.fs-12 {
+  font-size: 12px !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.border {
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.border-bottom {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.fa-trash-o:hover {
+  color: red;
+}
+
+.fa-pencil:hover {
+  color: yellow;
+}
+
+.fa-check:hover {
+  color: green;
+}
+
+.green {
+  color: green;
+}
+
+input,
+textarea {
+  color: #fff !important;
+  font-size: 14px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  background: none !important;
+  resize: none !important;
+}
+
+input:focus,
+textarea:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border: 1px solid #fff !important;
+}
+/*# sourceMappingURL=style.css.map */

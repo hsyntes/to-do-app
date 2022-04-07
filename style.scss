@@ -1,0 +1,133 @@
+$color-dark: #161616;
+$color-darker: #0f0e0e;
+$color-primary: #e63e6d;
+$color-light: #fff;
+$color-muted: rgba(255, 255, 255, 0.2);
+
+@mixin setBg($color) {
+  background: $color !important;
+}
+
+@mixin setColor($color) {
+  color: $color !important;
+}
+
+@mixin setFontSize($size) {
+  font-size: $size !important;
+}
+
+@mixin setFontWeight($weight) {
+  font-weight: $weight !important;
+}
+
+@mixin btnBehavior($color) {
+  &:hover {
+    background: darken($color: $color, $amount: 5) !important;
+  }
+  &:active {
+    background: darken($color: $color, $amount: 10) !important;
+  }
+}
+
+body {
+  @include setBg($color-dark);
+  @include setColor($color-light);
+  font-family: "Roboto", sans-serif;
+}
+
+.logo {
+  font-family: "Dancing Script", cursive !important;
+  @include setFontSize(32px);
+}
+
+a,
+.btn,
+p,
+span {
+  @include setFontSize(14px);
+  @include setFontWeight(500);
+}
+
+.btn {
+  border: none !important;
+  @include setColor($color-light);
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+
+.btn-primary {
+  @include setBg($color-primary);
+  @include setColor($color-light);
+  @include btnBehavior($color-primary);
+}
+
+.bg-dark {
+  @include setBg($color-dark);
+}
+
+.bg-darker {
+  @include setBg($color-darker);
+}
+
+.dropdown-menu-dark {
+  @include setBg($color-dark);
+  .dropdown-item {
+    &:active {
+      @include setBg($color-primary);
+    }
+  }
+}
+
+.list-group-item {
+  &:hover {
+    @include setBg($color-darker);
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.border {
+  border: 1px solid $color-muted !important;
+}
+
+.border-bottom {
+  border-bottom: 1px solid $color-muted !important;
+}
+
+.fa-trash-o {
+  &:hover {
+    color: red;
+  }
+}
+
+.fa-pencil {
+  &:hover {
+    color: yellow;
+  }
+}
+
+.fa-check {
+  &:hover {
+    color: green;
+  }
+}
+
+.green {
+  color: green;
+}
+
+input,
+textarea {
+  @include setColor($color-light);
+  @include setFontSize(14px);
+  border: 1px solid $color-muted !important;
+  background: none !important;
+  resize: none !important;
+  &:focus {
+    box-shadow: none !important;
+    border: 1px solid #fff !important;
+  }
+}
