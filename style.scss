@@ -29,6 +29,10 @@ $color-muted: rgba(255, 255, 255, 0.2);
   }
 }
 
+@mixin setShadow() {
+  box-shadow: 0 0 10px $color-darker !important;
+}
+
 body {
   @include setBg($color-dark);
   @include setColor($color-light);
@@ -39,7 +43,7 @@ body {
 
 .logo {
   font-family: "Dancing Script", cursive !important;
-  @include setFontSize(32px);
+  @include setFontSize(26px);
 }
 
 a,
@@ -50,10 +54,15 @@ span {
   @include setFontWeight(500);
 }
 
+a {
+  text-decoration: none !important;
+}
+
 .btn {
   border: none !important;
+  box-shadow: none !important;
   @include setColor($color-light);
-  &:focus {
+  &:active {
     box-shadow: none !important;
   }
 }
@@ -70,6 +79,10 @@ span {
 
 .bg-darker {
   @include setBg($color-darker);
+}
+
+.text-light {
+  @include setColor($color-light);
 }
 
 .text-muted {
@@ -154,6 +167,10 @@ textarea {
 
 .dropdown-menu {
   animation: 0.2s opening-animation ease-out;
+}
+
+.shadow {
+  @include setShadow();
 }
 
 @keyframes opening-animation {

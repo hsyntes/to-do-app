@@ -26,13 +26,21 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-sm-8 d-flex flex-column mx-auto" style="height: 100vh">
+        <div
+          class="col-sm-8 d-flex flex-column mx-auto py-3"
+          style="height: 100vh"
+        >
           <nav
-            class="navbar navbar-expand navbar-dark bg-dark border-0 border-bottom"
+            class="navbar navbar-expand navbar-dark bg-dark border shadow rounded-pill"
           >
             <div class="container" id="container-nav">
+              <a href="#" class="navbar-brand logo">ToDoApp</a>
               <div class="dropstart">
-                <a href="#" class="btn" data-bs-toggle="dropdown">
+                <a
+                  href="#"
+                  class="d-block text-light btn"
+                  data-bs-toggle="dropdown"
+                >
                   <i class="fa fa-ellipsis-v fa-lg pointer"></i>
                 </a>
                 <ul
@@ -58,15 +66,15 @@
           </nav>
           <main class="my-5">
             <div class="container" id="container-tasks">
-              <ul class="list-group rounded"></ul>
+              <ul class="list-group rounded shadow"></ul>
             </div>
           </main>
-          <footer class="mt-auto py-3">
+          <footer class="mt-auto">
             <div class="container">
               <div class="d-flex">
                 <button
                   type="button"
-                  class="btn btn-primary rounded-circle ms-auto"
+                  class="btn btn-primary rounded-circle ms-auto shadow"
                   data-bs-toggle="modal"
                   data-bs-target="#modal-add-task"
                 >
@@ -104,7 +112,7 @@
                 <div class="modal-footer border-0 pt-0">
                   <button
                     type="button"
-                    class="btn btn-primary rounded-circle"
+                    class="btn btn-primary rounded-circle shadow"
                     id="btn-add-task"
                   >
                     <span>
@@ -142,7 +150,7 @@
                 <div class="modal-footer border-0 pt-0">
                   <button
                     type="button"
-                    class="btn btn-primary rounded-circle"
+                    class="btn btn-primary rounded-circle shadow"
                     id="btn-edit-task"
                   >
                     <span>
@@ -166,7 +174,7 @@
                   <div class="d-flex aligin-items-center justify-content-end">
                     <button
                       type="button"
-                      class="btn btn-success rounded"
+                      class="btn btn-success rounded shadow"
                       id="btn-no-delete-all"
                       data-bs-dismiss="modal"
                     >
@@ -174,14 +182,14 @@
                     </button>
                     <button
                       type="button"
-                      class="btn btn-danger rounded ms-2"
+                      class="btn btn-danger rounded shadow ms-2"
                       id="btn-yes-delete-all"
                     >
                       Yes
                     </button>
                     <button
                       type="button"
-                      class="btn btn-danger rounded"
+                      class="btn btn-danger rounded shadow"
                       data-bs-dismiss="modal"
                       id="btn-close-delete-all"
                     >

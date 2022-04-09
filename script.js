@@ -14,35 +14,17 @@ const btnNoDeleteAll = document.querySelector("#btn-no-delete-all");
 const btnCloseDeleteAll = document.querySelector("#btn-close-delete-all");
 
 const App = {
-  name: "ToDoApp",
   taskTextLimit: 50,
 };
 
-(function (appName) {
-  const a = document.createElement("a");
-  a.setAttribute("href", "#");
-  a.className = "navbar-brand logo";
-  a.textContent = appName;
-
-  document.querySelector("#container-nav").prepend(a);
-})(App.name);
-
 function createTask(text) {
   return `
-<li class="list-group-item d-flex align-items-center bg-dark text-light">
-  <p class="task-text m-0 p-0">${text}</p>
-  <span class="ms-auto">
-    <i class="fa task-icons fa-trash-o pointer"></i>
-  </span>
-  <span class="ms-3">
-    <i class="fa task-icons fa-pencil pointer"
-      data-bs-toggle="modal"
-      data-bs-target="#modal-edit-task">
-    </i>
-  </span>
-  <span class="ms-3">
-    <i class="fa task-icons fa-check pointer"></i>
-  </span>
+<li class="list-group-item d-flex align-items-center bg-dark text-light py-0">
+  <a href="#" class="task-item d-block w-100 text-light py-2"
+    data-bs-toggle="modal"
+    data-bs-target="#modal-edit-task">${text}</a>
+  <i class="task-item fa fa-trash-o d-block pointer p-2"></i>
+  <i class="task-item fa fa-check d-block pointer p-2"></i>
 </li>
     `;
 }
@@ -84,11 +66,7 @@ inputAddTask.addEventListener("keydown", function (e) {
   }
 });
 
-function deleteTask(listGroupItem) {
-  listGroupItem.remove();
-  checkListGroup();
-}
-
+let listGroupItem, taskText, checkIcon, deleteIcon;
 function edit() {
   if (taskText.textContent === inputEditTask.value)
     alert("They are already the same!");
@@ -105,21 +83,27 @@ function edit() {
 
 const editTask = (taskText) => (inputEditTask.value = taskText.textContent);
 
-function checkTask(taskText, listGroupItem, checkIcon) {
+function deleteTask(listGroupItem) {
+  listGroupItem.remove();
+  checkListGroup();
+}
+
+function checkTask(listGroupItem, taskText, checkIcon) {
   taskText.classList.toggle("text-decoration-line-through");
   listGroupItem.classList.toggle("bg-darker");
   checkIcon.classList.toggle("green");
 }
 
-let listGroupItem, taskText, checkIcon;
 document.addEventListener("click", function (e) {
-  if (e.target.classList.contains("task-icons")) {
+  if (e.target.classList.contains("task-item")) {
     listGroupItem = e.target.closest(".list-group-item");
     taskText = listGroupItem.firstElementChild;
-    checkIcon = listGroupItem.lastElementChild.firstElementChild;
-    if (e.target.classList.contains("fa-trash-o")) deleteTask(listGroupItem);
-    else if (e.target.classList.contains("fa-pencil")) editTask(taskText);
-    else checkTask(taskText, listGroupItem, checkIcon);
+    checkIcon = listGroupItem.lastElementChild;
+    deleteIcon = checkIcon.previousElementSibling;
+
+    if (e.target === taskText) editTask(taskText);
+    else if (e.target === deleteIcon) deleteTask(listGroupItem);
+    else checkTask(listGroupItem, taskText, checkIcon);
   }
 });
 

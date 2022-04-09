@@ -8,7 +8,7 @@ body {
 
 .logo {
   font-family: "Dancing Script", cursive !important;
-  font-size: 32px !important;
+  font-size: 26px !important;
 }
 
 a,
@@ -19,12 +19,18 @@ span {
   font-weight: 500 !important;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 .btn {
   border: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
   color: #fff !important;
 }
 
-.btn:focus {
+.btn:active {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
 }
@@ -48,6 +54,10 @@ span {
 
 .bg-darker {
   background: #0f0e0e !important;
+}
+
+.text-light {
+  color: #fff !important;
 }
 
 .text-muted {
@@ -126,6 +136,11 @@ textarea:focus {
 .dropdown-menu {
   -webkit-animation: 0.2s opening-animation ease-out;
           animation: 0.2s opening-animation ease-out;
+}
+
+.shadow {
+  -webkit-box-shadow: 0 0 10px #0f0e0e !important;
+          box-shadow: 0 0 10px #0f0e0e !important;
 }
 
 @-webkit-keyframes opening-animation {
