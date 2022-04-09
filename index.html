@@ -24,63 +24,70 @@
     <title>ToDoApp</title>
   </head>
   <body>
-    <nav
-      class="navbar navbar-expand navbar-dark bg-dark border-0 border-bottom"
-    >
-      <div class="container" id="container-nav">
-        <div class="dropstart">
-          <i
-            class="fa fa-ellipsis-v fa-lg pointer"
-            data-bs-toggle="dropdown"
-          ></i>
-          <ul class="dropdown-menu dropdown-menu-dark border rounded shadow">
-            <li>
-              <a
-                href="#"
-                class="dropdown-item"
-                id="btn-delete-all"
-                data-bs-toggle="modal"
-                data-bs-target="#modal-delete-all"
-              >
-                <span>
-                  <i class="fa fa-trash-o"></i>
-                </span>
-                <span>Delete All</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <main class="my-5">
-      <div class="container" id="container-tasks">
-        <ul class="list-group"></ul>
-      </div>
-    </main>
-    <footer class="fixed-bottom py-3">
-      <div class="container">
-        <div class="d-flex">
-          <button
-            type="button"
-            class="btn btn-primary rounded-circle ms-auto"
-            data-bs-toggle="modal"
-            data-bs-target="#modal-add-task"
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 d-flex flex-column mx-auto" style="height: 100vh">
+          <nav
+            class="navbar navbar-expand navbar-dark bg-dark border-0 border-bottom"
           >
-            <span>
-              <i class="fa fa-plus fa-sm"></i>
-            </span>
-          </button>
+            <div class="container" id="container-nav">
+              <div class="dropstart">
+                <a href="#" class="btn" data-bs-toggle="dropdown">
+                  <i class="fa fa-ellipsis-v fa-lg pointer"></i>
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-dark border rounded shadow"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      class="dropdown-item"
+                      id="btn-delete-all"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modal-delete-all-tasks"
+                    >
+                      <span>
+                        <i class="fa fa-trash-o"></i>
+                      </span>
+                      <span>Delete All</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <main class="my-5">
+            <div class="container" id="container-tasks">
+              <ul class="list-group rounded"></ul>
+            </div>
+          </main>
+          <footer class="mt-auto py-3">
+            <div class="container">
+              <div class="d-flex">
+                <button
+                  type="button"
+                  class="btn btn-primary rounded-circle ms-auto"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal-add-task"
+                >
+                  <span>
+                    <i class="fa fa-plus fa-sm"></i>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </footer>
         </div>
       </div>
-    </footer>
-    <div class="modal fade" id="modal-add-task">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content bg-dark border">
+    </div>
+    <div class="modal" id="modal-add-task">
+      <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content bg-dark border rounded">
           <div class="modal-header border-0 pb-0">
             <h6 class="modal-title m-0 p-0">Add New Task</h6>
             <button
               type="button"
-              class="btn"
+              class="btn text-muted"
               id="btn-close-add-task"
               data-bs-dismiss="modal"
             >
@@ -93,7 +100,7 @@
             <textarea
               name="input-add-task"
               id="input-add-task"
-              class="form-control"
+              class="form-control rounded"
               placeholder="Add your task"
             ></textarea>
           </div>
@@ -111,14 +118,14 @@
         </div>
       </div>
     </div>
-    <div class="modal fade" id="modal-edit-task">
+    <div class="modal" id="modal-edit-task">
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content bg-dark border">
+        <div class="modal-content bg-dark border rounded">
           <div class="modal-header border-0 pb-0">
             <h6 class="modal-title m-0 p-0">Edit The Task</h6>
             <button
               type="button"
-              class="btn"
+              class="btn text-muted"
               id="btn-close-edit-task"
               data-bs-dismiss="modal"
             >
@@ -131,7 +138,7 @@
             <textarea
               name="input-edit-task"
               id="input-edit-task"
-              class="form-control"
+              class="form-control rounded"
               placeholder="Edit your task"
             ></textarea>
           </div>
@@ -142,37 +149,43 @@
               id="btn-edit-task"
             >
               <span>
-                <i class="fa fa-plus fa-sm"></i>
+                <i class="fa fa-check fa-sm"></i>
               </span>
             </button>
           </div>
         </div>
       </div>
     </div>
-    <div class="modal fade" id="modal-delete-all">
+    <div class="modal" id="modal-delete-all-tasks">
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content bg-dark border">
+        <div class="modal-content bg-dark border rounded">
           <div class="modal-header border-0">
-            <h6 class="modal-title m-0 p-0">
-              Do you want to delete the all tasks?
-            </h6>
+            <h6 class="modal-title m-0 p-0" id="modal-delete-all-title"></h6>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" id="modal-delete-all-body">
             <div class="d-flex aligin-items-center justify-content-end">
               <button
                 type="button"
-                class="btn btn-success px-4 py-2"
-                id="btn-no"
+                class="btn btn-success rounded"
+                id="btn-no-delete-all"
                 data-bs-dismiss="modal"
               >
                 No
               </button>
               <button
                 type="button"
-                class="btn btn-danger px-4 py-2 ms-2"
-                id="btn-yes"
+                class="btn btn-danger rounded ms-2"
+                id="btn-yes-delete-all"
               >
                 Yes
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger rounded"
+                data-bs-dismiss="modal"
+                id="btn-close-delete-all"
+              >
+                Close
               </button>
             </div>
           </div>

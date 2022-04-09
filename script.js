@@ -7,8 +7,11 @@ const btnCloseAddTask = document.querySelector("#btn-close-add-task");
 const btnEditTask = document.querySelector("#btn-edit-task");
 const inputEditTask = document.querySelector("#input-edit-task");
 const btnCloseEditTask = document.querySelector("#btn-close-edit-task");
-const btnYes = document.querySelector("#btn-yes");
-const btnNo = document.querySelector("#btn-no");
+const btnDeleteAll = document.querySelector("#btn-delete-all");
+const modalDeleteAllTitle = document.querySelector("#modal-delete-all-title");
+const btnYesDeleteAll = document.querySelector("#btn-yes-delete-all");
+const btnNoDeleteAll = document.querySelector("#btn-no-delete-all");
+const btnCloseDeleteAll = document.querySelector("#btn-close-delete-all");
 
 const App = {
   name: "ToDoApp",
@@ -73,7 +76,10 @@ function addTask() {
     clearInputs(inputAddTask);
     btnCloseAddTask.click();
     checkListGroup();
-  } else setMessage(`The task text cannot be over ${App.taskTextLimit} lenght`);
+  } else
+    setMessage(
+      `The task text cannot be empty or over ${App.taskTextLimit} lenght`
+    );
 }
 
 btnAddTask.addEventListener("click", addTask);
@@ -97,7 +103,9 @@ function edit() {
       taskText.textContent = formatTaskText(inputEditTask.value);
       btnCloseEditTask.click();
     } else
-      setMessage(`The task text cannot be over ${App.taskTextLimit} lenght`);
+      setMessage(
+        `The task text cannot be empty or over ${App.taskTextLimit} lenght`
+      );
   }
 }
 
@@ -131,12 +139,30 @@ inputEditTask.addEventListener("keydown", function (e) {
   }
 });
 
-btnYes.addEventListener("click", function () {
+function switchDisplays(items, state) {
+  for (const item of items) {
+    state == 0 ? item.classList.add("d-none") : item.classList.remove("d-none");
+  }
+}
+
+btnDeleteAll.addEventListener("click", function () {
+  if (listGroup.childElementCount === 0) {
+    modalDeleteAllTitle.textContent = "There is nothing to show here.";
+    switchDisplays([btnNoDeleteAll, btnYesDeleteAll], 0);
+  } else {
+    modalDeleteAllTitle.textContent = "Do you want to delete the all tasks?";
+    switchDisplays([btnNoDeleteAll, btnYesDeleteAll], 1);
+    btnCloseDeleteAll.classList.add("d-none");
+  }
+});
+
+btnYesDeleteAll.addEventListener("click", function () {
   while (listGroup.childElementCount > 0) {
-    for (const item of listGroup.children) {
-      item.remove();
+    for (const child of listGroup.children) {
+      child.remove();
     }
   }
-  btnNo.click();
+  btnNoDeleteAll.click();
+  btnCloseDeleteAll.classList.remove("d-none");
   checkListGroup();
 });

@@ -33,6 +33,8 @@ body {
   @include setBg($color-dark);
   @include setColor($color-light);
   font-family: "Roboto", sans-serif;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .logo {
@@ -70,6 +72,16 @@ span {
   @include setBg($color-darker);
 }
 
+.text-muted {
+  @include setColor($color-muted);
+}
+
+.btn.text-muted {
+  &:hover {
+    @include setColor($color-light);
+  }
+}
+
 .dropdown-menu-dark {
   @include setBg($color-dark);
   .dropdown-item {
@@ -95,6 +107,10 @@ span {
 
 .border-bottom {
   border-bottom: 1px solid $color-muted !important;
+}
+
+.rounded {
+  border-radius: 10px !important;
 }
 
 .fa-trash-o {
@@ -129,5 +145,25 @@ textarea {
   &:focus {
     box-shadow: none !important;
     border: 1px solid #fff !important;
+  }
+}
+
+.modal {
+  animation: 0.2s modal ease-out;
+}
+
+.dropdown-menu {
+  animation: 0.2s modal ease-out;
+}
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

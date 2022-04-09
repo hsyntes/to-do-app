@@ -2,6 +2,8 @@ body {
   background: #161616 !important;
   color: #fff !important;
   font-family: "Roboto", sans-serif;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .logo {
@@ -48,6 +50,14 @@ span {
   background: #0f0e0e !important;
 }
 
+.text-muted {
+  color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.btn.text-muted:hover {
+  color: #fff !important;
+}
+
 .dropdown-menu-dark {
   background: #161616 !important;
 }
@@ -60,10 +70,6 @@ span {
   background: #0f0e0e !important;
 }
 
-.fs-12 {
-  font-size: 12px !important;
-}
-
 .pointer {
   cursor: pointer;
 }
@@ -74,6 +80,10 @@ span {
 
 .border-bottom {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.rounded {
+  border-radius: 10px !important;
 }
 
 .fa-trash-o:hover {
@@ -106,5 +116,41 @@ textarea:focus {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   border: 1px solid #fff !important;
+}
+
+.modal {
+  -webkit-animation: 0.2s modal ease-out;
+          animation: 0.2s modal ease-out;
+}
+
+.dropdown-menu {
+  -webkit-animation: 0.2s modal ease-out;
+          animation: 0.2s modal ease-out;
+}
+
+@-webkit-keyframes modal {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 /*# sourceMappingURL=style.css.map */
