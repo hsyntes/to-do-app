@@ -47,25 +47,19 @@ function createTask(text) {
     `;
 }
 
-const formatTaskText = function (taskText) {
-  return taskText.length > Number(App.taskTextLimit)
+const formatTaskText = (taskText) =>
+  taskText.length > Number(App.taskTextLimit)
     ? false
     : `${taskText.slice(0, 1).toUpperCase()}${taskText.slice(1).toLowerCase()}`;
-};
 
-function clearInputs(input) {
-  input.value = "";
-}
+const clearInputs = (input) => (input.value = "");
 
-function checkListGroup() {
+const checkListGroup = () =>
   listGroup.childElementCount >= 1
     ? listGroup.classList.add("border")
     : listGroup.classList.remove("border");
-}
 
-const setMessage = (message) => {
-  alert(message);
-};
+const setMessage = (message) => alert(message);
 
 function addTask() {
   if (formatTaskText(inputAddTask.value)) {
@@ -109,9 +103,7 @@ function edit() {
   }
 }
 
-function editTask(taskText) {
-  inputEditTask.value = taskText.textContent;
-}
+const editTask = (taskText) => (inputEditTask.value = taskText.textContent);
 
 function checkTask(taskText, listGroupItem, checkIcon) {
   taskText.classList.toggle("text-decoration-line-through");
@@ -140,9 +132,11 @@ inputEditTask.addEventListener("keydown", function (e) {
 });
 
 function switchDisplays(items, state) {
-  for (const item of items) {
-    state == 0 ? item.classList.add("d-none") : item.classList.remove("d-none");
-  }
+  items.forEach(function (item) {
+    state === 0
+      ? item.classList.add("d-none")
+      : item.classList.remove("d-none");
+  });
 }
 
 btnDeleteAll.addEventListener("click", function () {
@@ -157,11 +151,8 @@ btnDeleteAll.addEventListener("click", function () {
 });
 
 btnYesDeleteAll.addEventListener("click", function () {
-  while (listGroup.childElementCount > 0) {
-    for (const child of listGroup.children) {
-      child.remove();
-    }
-  }
+  while (listGroup.childElementCount > 0)
+    for (const item of listGroup.children) item.remove();
   btnNoDeleteAll.click();
   btnCloseDeleteAll.classList.remove("d-none");
   checkListGroup();
