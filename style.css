@@ -119,16 +119,16 @@ textarea:focus {
 }
 
 .modal {
-  -webkit-animation: 0.2s modal ease-out;
-          animation: 0.2s modal ease-out;
+  -webkit-animation: 0.2s opening-animation ease-out;
+          animation: 0.2s opening-animation ease-out;
 }
 
 .dropdown-menu {
-  -webkit-animation: 0.2s modal ease-out;
-          animation: 0.2s modal ease-out;
+  -webkit-animation: 0.2s opening-animation ease-out;
+          animation: 0.2s opening-animation ease-out;
 }
 
-@-webkit-keyframes modal {
+@-webkit-keyframes opening-animation {
   from {
     opacity: 0;
     -webkit-transform: scale(0.9);
@@ -141,7 +141,7 @@ textarea:focus {
   }
 }
 
-@keyframes modal {
+@keyframes opening-animation {
   from {
     opacity: 0;
     -webkit-transform: scale(0.9);

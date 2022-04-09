@@ -77,116 +77,119 @@
               </div>
             </div>
           </footer>
-        </div>
-      </div>
-    </div>
-    <div class="modal" id="modal-add-task">
-      <div class="modal-dialog modal-dialog-centered modal-sm">
-        <div class="modal-content bg-dark border rounded">
-          <div class="modal-header border-0 pb-0">
-            <h6 class="modal-title m-0 p-0">Add New Task</h6>
-            <button
-              type="button"
-              class="btn text-muted"
-              id="btn-close-add-task"
-              data-bs-dismiss="modal"
-            >
-              <span>
-                <i class="fa fa-times"></i>
-              </span>
-            </button>
+          <div class="modal" id="modal-add-task">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+              <div class="modal-content bg-dark border rounded">
+                <div class="modal-header border-0 pb-0">
+                  <h6 class="modal-title m-0 p-0">Add New Task</h6>
+                  <button
+                    type="button"
+                    class="btn text-muted"
+                    id="btn-close-add-task"
+                    data-bs-dismiss="modal"
+                  >
+                    <span>
+                      <i class="fa fa-times"></i>
+                    </span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <textarea
+                    name="input-add-task"
+                    id="input-add-task"
+                    class="form-control rounded"
+                    placeholder="Add your task"
+                  ></textarea>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                  <button
+                    type="button"
+                    class="btn btn-primary rounded-circle"
+                    id="btn-add-task"
+                  >
+                    <span>
+                      <i class="fa fa-plus fa-sm"></i>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="modal-body">
-            <textarea
-              name="input-add-task"
-              id="input-add-task"
-              class="form-control rounded"
-              placeholder="Add your task"
-            ></textarea>
+          <div class="modal" id="modal-edit-task">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+              <div class="modal-content bg-dark border rounded">
+                <div class="modal-header border-0 pb-0">
+                  <h6 class="modal-title m-0 p-0">Edit The Task</h6>
+                  <button
+                    type="button"
+                    class="btn text-muted"
+                    id="btn-close-edit-task"
+                    data-bs-dismiss="modal"
+                  >
+                    <span>
+                      <i class="fa fa-times"></i>
+                    </span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <textarea
+                    name="input-edit-task"
+                    id="input-edit-task"
+                    class="form-control rounded"
+                    placeholder="Edit your task"
+                  ></textarea>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                  <button
+                    type="button"
+                    class="btn btn-primary rounded-circle"
+                    id="btn-edit-task"
+                  >
+                    <span>
+                      <i class="fa fa-check fa-sm"></i>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="modal-footer border-0 pt-0">
-            <button
-              type="button"
-              class="btn btn-primary rounded-circle"
-              id="btn-add-task"
-            >
-              <span>
-                <i class="fa fa-plus fa-sm"></i>
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal" id="modal-edit-task">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content bg-dark border rounded">
-          <div class="modal-header border-0 pb-0">
-            <h6 class="modal-title m-0 p-0">Edit The Task</h6>
-            <button
-              type="button"
-              class="btn text-muted"
-              id="btn-close-edit-task"
-              data-bs-dismiss="modal"
-            >
-              <span>
-                <i class="fa fa-times"></i>
-              </span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <textarea
-              name="input-edit-task"
-              id="input-edit-task"
-              class="form-control rounded"
-              placeholder="Edit your task"
-            ></textarea>
-          </div>
-          <div class="modal-footer border-0 pt-0">
-            <button
-              type="button"
-              class="btn btn-primary rounded-circle"
-              id="btn-edit-task"
-            >
-              <span>
-                <i class="fa fa-check fa-sm"></i>
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal" id="modal-delete-all-tasks">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content bg-dark border rounded">
-          <div class="modal-header border-0">
-            <h6 class="modal-title m-0 p-0" id="modal-delete-all-title"></h6>
-          </div>
-          <div class="modal-body" id="modal-delete-all-body">
-            <div class="d-flex aligin-items-center justify-content-end">
-              <button
-                type="button"
-                class="btn btn-success rounded"
-                id="btn-no-delete-all"
-                data-bs-dismiss="modal"
-              >
-                No
-              </button>
-              <button
-                type="button"
-                class="btn btn-danger rounded ms-2"
-                id="btn-yes-delete-all"
-              >
-                Yes
-              </button>
-              <button
-                type="button"
-                class="btn btn-danger rounded"
-                data-bs-dismiss="modal"
-                id="btn-close-delete-all"
-              >
-                Close
-              </button>
+          <div class="modal" id="modal-delete-all-tasks">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+              <div class="modal-content bg-dark border rounded">
+                <div class="modal-header border-0">
+                  <h6
+                    class="modal-title m-0 p-0"
+                    id="modal-delete-all-title"
+                  ></h6>
+                </div>
+                <div class="modal-body" id="modal-delete-all-body">
+                  <div class="d-flex aligin-items-center justify-content-end">
+                    <button
+                      type="button"
+                      class="btn btn-success rounded"
+                      id="btn-no-delete-all"
+                      data-bs-dismiss="modal"
+                    >
+                      No
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger rounded ms-2"
+                      id="btn-yes-delete-all"
+                    >
+                      Yes
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger rounded"
+                      data-bs-dismiss="modal"
+                      id="btn-close-delete-all"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

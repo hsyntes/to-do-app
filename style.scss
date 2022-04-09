@@ -149,14 +149,14 @@ textarea {
 }
 
 .modal {
-  animation: 0.2s modal ease-out;
+  animation: 0.2s opening-animation ease-out;
 }
 
 .dropdown-menu {
-  animation: 0.2s modal ease-out;
+  animation: 0.2s opening-animation ease-out;
 }
 
-@keyframes modal {
+@keyframes opening-animation {
   from {
     opacity: 0;
     transform: scale(0.9);
