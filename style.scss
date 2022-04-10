@@ -112,9 +112,6 @@ a {
       @include setBg($color-darker);
     }
   }
-}
-
-.list-group {
   &::-webkit-scrollbar {
     width: 2px;
   }
