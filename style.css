@@ -76,8 +76,26 @@ a {
   background: #e63e6d !important;
 }
 
-.list-group-item:hover {
+.list-group {
+  max-height: 50vh !important;
+  overflow-x: hidden;
+}
+
+.list-group .list-group-item:hover {
   background: #0f0e0e !important;
+}
+
+.list-group::-webkit-scrollbar {
+  width: 2px;
+}
+
+.list-group::-webkit-scrollbar-track {
+  background: none !important;
+}
+
+.list-group::-webkit-scrollbar-thumb {
+  border-radius: 10px !important;
+  background: orange;
 }
 
 .pointer {

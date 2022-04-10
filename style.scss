@@ -104,9 +104,28 @@ a {
   }
 }
 
-.list-group-item {
-  &:hover {
-    @include setBg($color-darker);
+.list-group {
+  max-height: 50vh !important;
+  overflow-x: hidden;
+  .list-group-item {
+    &:hover {
+      @include setBg($color-darker);
+    }
+  }
+}
+
+.list-group {
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: none !important;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px !important;
+    background: orange;
   }
 }
 
