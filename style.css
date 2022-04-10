@@ -76,26 +76,27 @@ a {
   background: #e63e6d !important;
 }
 
-.list-group {
-  max-height: 50vh !important;
+main {
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
-.list-group .list-group-item:hover {
-  background: #0f0e0e !important;
+main::-webkit-scrollbar {
+  width: 3px;
 }
 
-.list-group::-webkit-scrollbar {
-  width: 2px;
-}
-
-.list-group::-webkit-scrollbar-track {
+main::-webkit-scrollbar-track {
+  border-radius: 360px !important;
   background: none !important;
 }
 
-.list-group::-webkit-scrollbar-thumb {
-  border-radius: 10px !important;
+main::-webkit-scrollbar-thumb {
+  border-radius: 360px !important;
   background: #e63e6d !important;
+}
+
+main .list-group .list-group-item:hover {
+  background: #0f0e0e !important;
 }
 
 .pointer {

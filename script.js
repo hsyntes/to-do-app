@@ -23,8 +23,8 @@ function createTask(text) {
   <a href="#" class="task-item d-block w-100 text-light py-2"
     data-bs-toggle="modal"
     data-bs-target="#modal-edit-task">${text}</a>
-  <i class="task-item fa fa-trash-o d-block pointer p-2"></i>
-  <i class="task-item fa fa-check d-block pointer p-2"></i>
+  <i class="task-item fa fa-trash-o fa-sm d-block pointer p-2"></i>
+  <i class="task-item fa fa-check fa-sm d-block pointer p-2"></i>
 </li>
     `;
 }
@@ -36,11 +36,6 @@ const formatTaskText = (taskText) =>
 
 const clearInputs = (input) => (input.value = "");
 
-const checkListGroup = () =>
-  listGroup.childElementCount >= 1
-    ? listGroup.classList.add("border")
-    : listGroup.classList.remove("border");
-
 const setMessage = (message) => alert(message);
 
 function addTask() {
@@ -51,7 +46,6 @@ function addTask() {
     );
     clearInputs(inputAddTask);
     btnCloseAddTask.click();
-    checkListGroup();
   } else
     setMessage(
       `The task text cannot be empty or over ${App.taskTextLimit} lenght`
@@ -85,7 +79,6 @@ const editTask = (taskText) => (inputEditTask.value = taskText.textContent);
 
 function deleteTask(listGroupItem) {
   listGroupItem.remove();
-  checkListGroup();
 }
 
 function checkTask(listGroupItem, taskText, checkIcon) {
@@ -139,5 +132,4 @@ btnYesDeleteAll.addEventListener("click", function () {
     for (const item of listGroup.children) item.remove();
   btnNoDeleteAll.click();
   btnCloseDeleteAll.classList.remove("d-none");
-  checkListGroup();
 });

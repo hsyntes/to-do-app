@@ -104,25 +104,27 @@ a {
   }
 }
 
-.list-group {
-  max-height: 50vh !important;
+main {
   overflow-x: hidden;
-  .list-group-item {
-    &:hover {
-      @include setBg($color-darker);
-    }
-  }
+  overflow-y: scroll;
   &::-webkit-scrollbar {
-    width: 2px;
+    width: 3px;
   }
-
   &::-webkit-scrollbar-track {
+    border-radius: 360px !important;
     background: none !important;
   }
 
   &::-webkit-scrollbar-thumb {
-    border-radius: 10px !important;
+    border-radius: 360px !important;
     @include setBg($color-primary);
+  }
+  .list-group {
+    .list-group-item {
+      &:hover {
+        @include setBg($color-darker);
+      }
+    }
   }
 }
 
