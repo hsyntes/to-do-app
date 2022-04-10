@@ -95,7 +95,7 @@ a {
 
 .list-group::-webkit-scrollbar-thumb {
   border-radius: 10px !important;
-  background: orange;
+  background: #e63e6d !important;
 }
 
 .pointer {
