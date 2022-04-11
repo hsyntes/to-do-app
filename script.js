@@ -13,6 +13,8 @@ const btnYesDeleteAll = document.querySelector("#btn-yes-delete-all");
 const btnNoDeleteAll = document.querySelector("#btn-no-delete-all");
 const btnCloseDeleteAll = document.querySelector("#btn-close-delete-all");
 
+let listGroupItem, taskText, checkIcon, deleteIcon;
+
 const App = {
   taskTextLimit: 50,
 };
@@ -60,8 +62,7 @@ inputAddTask.addEventListener("keydown", function (e) {
   }
 });
 
-let listGroupItem, taskText, checkIcon, deleteIcon;
-function edit() {
+function editTask() {
   if (taskText.textContent === inputEditTask.value)
     alert("They are already the same!");
   else {
@@ -74,8 +75,6 @@ function edit() {
       );
   }
 }
-
-const editTask = (taskText) => (inputEditTask.value = taskText.textContent);
 
 function deleteTask(listGroupItem) {
   listGroupItem.remove();
@@ -94,16 +93,16 @@ document.addEventListener("click", function (e) {
     checkIcon = listGroupItem.lastElementChild;
     deleteIcon = checkIcon.previousElementSibling;
 
-    if (e.target === taskText) editTask(taskText);
+    if (e.target === taskText) inputEditTask.value = taskText.textContent;
     else if (e.target === deleteIcon) deleteTask(listGroupItem);
     else checkTask(listGroupItem, taskText, checkIcon);
   }
 });
 
-btnEditTask.addEventListener("click", edit);
+btnEditTask.addEventListener("click", editTask);
 inputEditTask.addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
-    edit();
+    editTask();
     e.preventDefault();
   }
 });
