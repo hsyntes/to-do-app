@@ -2,7 +2,6 @@ body {
   background: #161616 !important;
   color: #fff !important;
   font-family: "Roboto", sans-serif;
-  height: 100vh;
   overflow: hidden;
 }
 
@@ -76,20 +75,21 @@ a {
   background: #e63e6d !important;
 }
 
-main {
+main .list-group {
+  max-height: 70vh;
   overflow-y: scroll;
 }
 
-main::-webkit-scrollbar {
+main .list-group::-webkit-scrollbar {
   width: 3px;
 }
 
-main::-webkit-scrollbar-track {
+main .list-group::-webkit-scrollbar-track {
   border-radius: 360px !important;
   background: none !important;
 }
 
-main::-webkit-scrollbar-thumb {
+main .list-group::-webkit-scrollbar-thumb {
   border-radius: 360px !important;
   background: #e63e6d !important;
 }
