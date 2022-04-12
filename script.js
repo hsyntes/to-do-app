@@ -36,7 +36,7 @@ const formatTaskText = (taskText) =>
     ? false
     : `${taskText.slice(0, 1).toUpperCase()}${taskText.slice(1).toLowerCase()}`;
 
-const clearInputs = (input) => (input.value = "");
+const clearInput = (input) => (input.value = "");
 
 const setMessage = (message) => alert(message);
 
@@ -46,7 +46,7 @@ function addTask() {
       "afterbegin",
       createTask(formatTaskText(inputAddTask.value))
     );
-    clearInputs(inputAddTask);
+    clearInput(inputAddTask);
     btnCloseAddTask.click();
   } else
     setMessage(
