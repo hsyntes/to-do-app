@@ -13,8 +13,6 @@ const btnYesDeleteAll = document.querySelector("#btn-yes-delete-all");
 const btnNoDeleteAll = document.querySelector("#btn-no-delete-all");
 const btnCloseDeleteAll = document.querySelector("#btn-close-delete-all");
 
-let listGroupItem, taskText, checkIcon, deleteIcon;
-
 const App = {
   taskTextLimit: 50,
 };
@@ -38,8 +36,6 @@ const formatTaskText = (taskText) =>
 
 const clearInput = (input) => (input.value = "");
 
-const setMessage = (message) => alert(message);
-
 function addTask() {
   if (formatTaskText(inputAddTask.value)) {
     listGroup.insertAdjacentHTML(
@@ -49,9 +45,7 @@ function addTask() {
     clearInput(inputAddTask);
     btnCloseAddTask.click();
   } else
-    setMessage(
-      `The task text cannot be empty or over ${App.taskTextLimit} lenght`
-    );
+    alert(`The task text cannot be empty or over ${App.taskTextLimit} lenght`);
 }
 
 btnAddTask.addEventListener("click", addTask);
@@ -62,6 +56,8 @@ inputAddTask.addEventListener("keydown", function (e) {
   }
 });
 
+let listGroupItem, taskText, checkIcon, deleteIcon;
+
 function editTask() {
   if (taskText.textContent === inputEditTask.value)
     alert("They are already the same!");
@@ -70,7 +66,7 @@ function editTask() {
       taskText.textContent = formatTaskText(inputEditTask.value);
       btnCloseEditTask.click();
     } else
-      setMessage(
+      alert(
         `The task text cannot be empty or over ${App.taskTextLimit} lenght`
       );
   }
